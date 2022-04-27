@@ -1,34 +1,32 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-   int i,n,r=0;
-   scanf("%d",&n);
-   int a[n];
-   for(i=0;i<n;i++)
-   {
-        scanf("%d",&a[i]);  
-   }
-   for(i=0;i<n;i++)
-   {
-       if(a[i]%2==0)
-       {
-           if(i%2==0)
-           {
-             r++;
-           }
-           else
-           {
-               r=0;
-               break;
-           }
-       }
-   }
-   if(r!=0)
-   {
-       printf("True");
-   }
-   else
-   {
-       printf("False");
-   }
+    int n,i,j=0,t=0,p=0;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+       // printf("%d",a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+            if(a[i]%2==0)
+            {
+                if(i%2==0)
+                {
+                    t++;
+                }
+                else 
+                {
+                    t=0;
+                }
+            }
+    }
+    //printf("%d %d %d ",p,j,t);
+    if(t==0)
+        printf("False");
+    else
+        printf("True");
 }
