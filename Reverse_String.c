@@ -1,37 +1,13 @@
-// C program to reverse a string
 #include <stdio.h>
-void reverse(char* begin, char* end)
-{
-    char temp;
-    while (begin < end) {
-        temp = *begin;
-        *begin++ = *end;
-        *end-- = temp;
-    }
-}
-void reverseWords(char* s)
-{
-    char* word_begin = s;
-    char* temp = s;
-    while (*temp) {
-        temp++;
-        if (*temp == NULL) {
-            reverse(word_begin, temp - 1);
-        }
-        else if (*temp == ' ') {
-            reverse(word_begin, temp - 1);
-            word_begin = temp + 1;
-        }
-    }
-    reverse(s, temp - 1);
-}
+#include <string.h>
 int main()
 {
-    char s[100] ;
+    char s[1000] ;
     scanf("%[^
 ]s",s);
-    char* temp = s;
-    reverseWords(s);
-    printf("%s", s);
+    for(int i=strlen(s)-1;i>=0;i--)
+    {
+        printf("%c",s[i]);
+    }
     return 0;
 }
