@@ -1,22 +1,13 @@
-#include <stdio.h>
-int main()
+#include<stdio.h>
+int main ()
 {
-    int a,b,i,r;
-    scanf("%d %d", &a, &b);
-    int max;
-    if(a>b)
-    max=b;
-    else
-    max=a;
-    while(1)
-    {
-        if(max%a==0 && max%b==0)
-        {
-            r=max;
-            break;
-        }
-        max++;
-    }
-    printf("%d",r);
-    return 0;
+int i,a,b,r;
+scanf("%d%d",&a,&b);
+for(i=1;a>i<b;i++)
+   {
+     r=a*i;
+     if(r%b==0)
+       break;
+   }
+   printf("%d",r);
 }
