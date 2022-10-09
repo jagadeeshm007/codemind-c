@@ -1,56 +1,50 @@
 #include<stdio.h>
-#include<math.h>
+int prime(int num)
+{
+    int i;
+    for (i=2; i*i<=num; i++)
+    {
+        if (num%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
 int main()
 {
-	int n,i,j,k=0,c=0,mx=0,mn=0,m=0;
-	int a;
-
-        scanf("%d",&a);
-        //printf("%d
-",a);
-        c=0;
-        k=0;
-    	for(i=0;i<a;i++)
-    	{
-    	    c=0;
-    	    for(j=2;j<a+k;j++)
-        	{
-        	    if((a+k)%j==0)
-        	    {
-        	       c++; 
-        	    }
-        	}
-        	if(c==0)
-        	{
-        	    mx=a+k;
-        	    break;
-        	}
-        	k++;
-    	}
-    	c=0;
-    	m=0;
-    	for(i=0;i<a;i++)
-    	{
-    	    c=0;
-        	for(j=2;j<a-m;j++)
-            	{
-            	    if((a-m)%j==0)
-            	    {
-            	       c++; 
-            	    }
-            	}
-            	if(c==0)
-            	{
-            	    mn=a-m;
-            	    break;
-            	}
-            	m++;
-    	}
-    	int min=a-mn,max=mx-a;
-    	 if(min>max)
-    	    printf("%d
-",max);
-    	 else   
-            printf("%d
-",min);
+    int a;
+    scanf("%d",&a);
+    int diff1=0,diff2=0,i,p1,p2;
+    for (i=a+1; i<=10000; i++)
+    {
+        if (prime(i)==1)
+        {
+            diff1=i-a;
+            p1=i;
+            break;
+        }
+    }
+    for (i=a; i>0; i--)
+    {
+        if (prime(i)==1)
+        {
+            diff2=a-i;
+            p2=i;
+            break;
+        }
+    }
+    if (diff1>diff2)
+    {
+        printf("%d",diff2);
+    }
+    else if (diff1<diff2)
+    {
+        printf("%d",diff1);
+    }
+    else
+    {
+        printf("%d",diff2);
+    }
+    return 0;
 }
