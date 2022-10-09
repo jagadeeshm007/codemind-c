@@ -1,32 +1,23 @@
 #include<stdio.h>
 int main()
 {
-	int a,i,s=0,p=1,c=0;
-	scanf("%d",&a);
-	int k=a;
-     do 
+    int a;
+    scanf("%d",&a);
+    int sum=0,pro=1,r;
+    while (a>0)
     {
-         k=k/10;
-        ++c;
+        r=a%10;
+        sum+=r;
+        pro*=r;
+        a/=10;
     }
-    while (k != 0);
-    int b[c];
-    for(i=0;i<c;i++)
-    {
-        b[i]=a%10;
-        a=a/10;
-    }
-    for(i=0;i<c;i++)
-    {
-        s=s+b[i];
-        p=p*b[i];
-    }
-    if(s==p)
+    if (pro==sum)
     {
         printf("Spy Number");
     }
     else
     {
-         printf("Not Spy Number");
+        printf("Not Spy Number");
     }
+    return 0;
 }
