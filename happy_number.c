@@ -1,31 +1,50 @@
 #include<stdio.h>
-int happy(int n)
+#include<math.h>
+int happy(int x)
 {
-    int tem,s=0;
-    while(n!=0)
-    {
-       tem=n%10;
-       s=s+(tem*tem);
-       n=n/10;
-    }
-    if(s==1 || s==7)
-    {
-	//printf("%d ",s);
-    return 1;}
-    if(s==2||s==3||s==4||s==5||s==6||s==9||s==8)
-    {//printf("%d ",s);
-    return 0;}
-    else
-    return happy(s);
+	int sum=0,r,res;
+	while (1>0)
+	{
+		sum=0;
+		while (x>0)
+		{
+			r=x%10;
+			sum+=pow(r,2);
+			x=x/10;
+		}
+		if (sum>9)
+		{
+			x=sum;
+			continue;
+		}
+		else
+		{
+			break;
+		}
+	}
+	if (sum==1 || sum==7)
+	{
+		res=1;
+		return res;
+	}
+	else
+	{
+		res=0;
+		return res;
+	}
 }
 int main()
 {
-    int n,v;
-    scanf("%d",&n);
-    v=happy(n);
-    //printf("%d",v);
-   if(v==1)
-   printf("True");
-   else
-   printf("False");
+	int a,res;
+	scanf("%d",&a);
+	res=happy(a);
+	if (res==1)
+	{
+		printf("True");
+	}
+	else
+	{
+		printf("False");
+	}
+	return 0;
 }
