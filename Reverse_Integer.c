@@ -1,21 +1,36 @@
 #include<stdio.h>
 int main()
 {
-	int a,k,i,c=0,r=0,rev;
-	scanf("%d",&a); 
-    k=a; 
-    do
-    {
-        k=k/10;
-        ++c; 
-    }
-    while (k != 0);
-
-    for(i=1;i<=c;i++)
-    {
-        rev=a%10;  
-        r=r*10+rev; 
-        a=a/10; 
-    }
-    printf("%d",r);
+    int a;
+    scanf("%d",&a);
+    int b,c,rev=0;
+    if (a>=-231 && a<=231-1)
+        if (a<0)
+        {
+            c=-1*a;
+            while (c>0)
+            {
+                b=c%10;
+                rev=(rev*10)+b;
+                c=c/10;
+            }
+            rev*=-1;
+            printf("%d",rev);
+        }
+        else if (a>0)
+        {
+            c=a;
+            while (c>0)
+            {
+                b=c%10;
+                rev=(rev*10)+b;
+                c=c/10;
+            }
+            printf("%d",rev);
+        }
+        else
+        {
+            printf("%d",0);
+        }
+    return 0;
 }
