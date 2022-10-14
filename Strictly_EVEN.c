@@ -8,7 +8,6 @@ int main()
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
-       // printf("%d",a[i]);
     }
     for(i=0;i<n;i++)
     {
@@ -24,7 +23,6 @@ int main()
                 }
             }
     }
-    //printf("%d %d %d ",p,j,t);
     if(t==0)
         printf("False");
     else
